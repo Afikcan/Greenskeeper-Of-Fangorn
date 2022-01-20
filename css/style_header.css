@@ -1,0 +1,10 @@
+/*nous créons une page css personnalisée pour chaque partie afin qu'elle soit plus facile à contrôler*/
+
+header {
+    background-color: #b6f8b9;
+    text-align: center;
+    border-radius: 0.3em;
+    width: 100%;
+    border-bottom: 1px solid #000000;
+}
+

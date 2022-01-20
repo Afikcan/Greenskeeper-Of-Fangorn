@@ -1,0 +1,96 @@
+/*Nous avons créé une page CSS différente car footer de page est assez long.*/
+/*nous créons une page css personnalisée pour chaque partie afin qu'elle soit plus facile à contrôler*/
+
+body .footer {
+    background-color: #84ac86;
+    z-index: 1;
+    --footer-background: #84ac86;
+    display: grid;
+    position: relative;
+    grid-area: footer;
+    min-height: 13rem;
+}
+body .footer .bubbles {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    background: var(--footer-background);
+    filter: url("#blob");
+}
+body .footer .bubbles .bubble {
+    position: absolute;
+    left: var(--position, 50%);
+    background: #84ac86;
+    border-radius: 100%;
+    animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    transform: translate(-50%, 100%);
+}
+body .footer .content {
+    width: 100%;
+    margin-top: 10px;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 4rem;
+    padding: 1rem;
+    background: var(--footer-background);
+}
+body .footer .content a, body .footer .content p {
+    color: #f5f7fa;
+    text-decoration: none;
+}
+body .footer .content b {
+    color: white;
+}
+body .footer .content p {
+    margin: 0;
+    font-size: 0.75rem;
+}
+body .footer .content > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+body .footer .content > div > div {
+    margin: 0.25rem 0;
+}
+body .footer .content > div > div > * {
+    margin-right: 0.5rem;
+}
+body .footer .content > div .image {
+    align-self: center;
+    width: 4rem;
+    height: 4rem;
+    margin: 0.25rem 0;
+    background-size: cover;
+    background-position: center;
+}
+@keyframes bubble-size {
+    0%, 75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+   }
+    100% {
+        width: 0rem;
+        height: 0rem;
+   }
+}
+@keyframes bubble-move {
+    0% {
+        bottom: -4rem;
+   }
+    100% {
+        bottom: var(--distance, 10rem);
+   }
+}
+
+
+div#footer_links ul{
+    list-style: none;
+}
+
+div#footer_links ul li a{
+    font-size: 1.1em;
+}

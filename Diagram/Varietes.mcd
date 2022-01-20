@@ -1,0 +1,27 @@
+SEMANCIERS: nomSemancier, _siteweb
+EST_PRODUITE, 0N SEMANCIERS, 1N VARIETES: versionProduction
+PLANTES: nomPlante, _nomLatin, catégoriePlante, typePlante, sousTypePlante
+SUBISSENT, 0N PLANTES, 0N MENACES
+JARDINS_VERGER: hauteurMax
+:
+
+MISE_EN_PLACE, 0N VARIETES, 0N PERIODE: descriptionSemis, descriptionPlantation
+VARIETES: nomVariete, annéeMiseSurMarché, précocité, descriptionEntretien, nbJoursLevée, commentaireVariete, infoSol
+DE_VARIETE, 11 VARIETES, 1N PLANTES
+MENACES: nomMenace, descriptionMenace, listeSolutions
+EST_VERGER, 01 JARDINS, 01 JARDINS_VERGER
+JARDINS_POTAGER: typeSol
+
+PERIODE: dateDebut, _dateFin
+RECOLTE, 0N VARIETES, 0N PERIODE: descriptionRecolte, quantitéProduite, qualitéGustative, commentaireRécolte
+OCCUPE, 0N VARIETES, 0N RANGS: typeMiseEnPlace, texteConsequences
+SE_COMPOSE, 11 PARCELLES, 1N JARDINS
+JARDINS: idJardin, nomJardin, surface
+EST_POTAGER, 01 JARDINS, 01 JARDINS_POTAGER
+
+INFESTATION, 0N PERIODE, 0N RANGS: typePlanteSauvage
+RANGS: numeroRang, latR, longR
+EST_DECOUPEE, _11 RANGS, 1N PARCELLES
+PARCELLES: latP, _longP, longueurP, largeurP
+EST_DORNEMENTS, 01 JARDINS, 01 JARDINS_DORNEMENTS
+JARDINS_DORNEMENTS: estDornements

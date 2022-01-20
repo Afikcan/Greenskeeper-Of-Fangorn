@@ -1,0 +1,43 @@
+/*nous créons une page css personnalisée pour chaque partie afin qu'elle soit plus facile à contrôler*/
+
+nav#menu {
+    flex: 2;
+    background-color: #b6f8b9;
+    padding-left: 1em;
+    padding-right: 1em;
+	margin-left: 0em;
+    line-height: 2em;
+    height: 25em;
+}
+
+nav#menu ul{
+    margin-top: 30px;
+    list-style: none;
+}
+
+nav#menu ul li{
+    margin-bottom: 1em;
+
+}
+
+a.link{
+    color: #003b0def;
+    border: 1px ;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: #6cc47a;
+    text-decoration: none;
+}
+
+a.link:hover{
+    color: greenyellow;
+    background-color: rgb(13, 107, 13);
+    transition-duration: 0.5s;
+}
+
+a.link :visited {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+

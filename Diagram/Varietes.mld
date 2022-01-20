@@ -1,0 +1,39 @@
+%%mocodo
+:
+SEMANCIERS: nomSemancier, _siteweb
+:
+EST_PRODUITE: #nomSemancier->SEMANCIERS->nomSemancier, _#siteweb->SEMANCIERS->siteweb, _#nomVariete->VARIETES->nomVariete, versionProduction
+:
+PLANTES: nomPlante, _nomLatin, catégoriePlante, typePlante, sousTypePlante
+:
+SUBISSENT: #nomPlante->PLANTES->nomPlante, _#nomLatin->PLANTES->nomLatin, _#nomMenace->MENACES->nomMenace
+::::
+
+
+:
+MISE_EN_PLACE: #nomVariete->VARIETES->nomVariete, _#dateDebut->PERIODE->dateDebut, _#dateFin->PERIODE->dateFin, descriptionSemis, descriptionPlantation
+:
+VARIETES: nomVariete, annéeMiseSurMarché, précocité, descriptionEntretien, nbJoursLevée, commentaireVariete, infoSol, #nomPlante->PLANTES->nomPlante, #nomLatin->PLANTES->nomLatin
+:::
+MENACES: nomMenace, descriptionMenace, listeSolutions
+::::
+
+
+:
+PERIODE: dateDebut, _dateFin
+:
+RECOLTE: #nomVariete->VARIETES->nomVariete, _#dateDebut->PERIODE->dateDebut, _#dateFin->PERIODE->dateFin, descriptionRecolte, quantitéProduite, qualitéGustative, commentaireRécolte
+:
+OCCUPE: #nomVariete->VARIETES->nomVariete, _#latP->RANGS->latP, _#longP->RANGS->longP, _#numeroRang->RANGS->numeroRang, typeMiseEnPlace, texteConsequences
+:::
+JARDINS: idJardin, nomJardin, surface, estDornements, hauteurMax, typeSol
+:::
+
+
+:
+INFESTATION: #dateDebut->PERIODE->dateDebut, _#dateFin->PERIODE->dateFin, _#latP->RANGS->latP, _#longP->RANGS->longP, _#numeroRang->RANGS->numeroRang, typePlanteSauvage
+:
+RANGS: #latP->PARCELLES->latP, _#longP->PARCELLES->longP, _numeroRang, latR, longR
+:::
+PARCELLES: latP, _longP, longueurP, largeurP, #idJardin->JARDINS->idJardin
+::::

@@ -1,0 +1,160 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<style>
+  #mld .relation { font-variant: small-caps; font-weight: bold }
+  #mld .primary { text-decoration: underline }
+  #mld .foreign { font-style: oblique }
+  #mld .normal { }
+</style>
+</head>
+<body>
+<div id='mld'>
+<div>
+  <span class='relation'>SEMANCIERS</span> (
+    <span class='primary'>nomSemancier</span>,
+    <span class='primary'>siteweb</span>
+  )
+</div>
+<div>
+  <span class='relation'>EST_PRODUITE</span> (
+    <span class='foreign primary'>nomSemancier</span>,
+    <span class='foreign primary'>siteweb</span>,
+    <span class='foreign primary'>nomVariete</span>,
+    <span class='normal'>versionProduction</span>
+  )
+</div>
+<div>
+  <span class='relation'>PLANTES</span> (
+    <span class='primary'>nomPlante</span>,
+    <span class='primary'>nomLatin</span>,
+    <span class='normal'>catégoriePlante</span>,
+    <span class='normal'>typePlante</span>,
+    <span class='normal'>sousTypePlante</span>
+  )
+</div>
+<div>
+  <span class='relation'>SUBISSENT</span> (
+    <span class='foreign primary'>nomPlante</span>,
+    <span class='foreign primary'>nomLatin</span>,
+    <span class='foreign primary'>nomMenace</span>
+  )
+</div>
+<!--
+<div>
+  <span class='relation'>JARDINS_VERGER</span> (
+    <span class='primary'>hauteurMax</span>
+  )
+</div>
+-->
+<div>
+  <span class='relation'>MISE_EN_PLACE</span> (
+    <span class='foreign primary'>nomVariete</span>,
+    <span class='foreign primary'>dateDebut</span>,
+    <span class='foreign primary'>dateFin</span>,
+    <span class='normal'>descriptionSemis</span>,
+    <span class='normal'>descriptionPlantation</span>
+  )
+</div>
+<div>
+  <span class='relation'>VARIETES</span> (
+    <span class='primary'>nomVariete</span>,
+    <span class='normal'>annéeMiseSurMarché</span>,
+    <span class='normal'>précocité</span>,
+    <span class='normal'>descriptionEntretien</span>,
+    <span class='normal'>nbJoursLevée</span>,
+    <span class='normal'>commentaireVariete</span>,
+    <span class='normal'>infoSol</span>,
+    <span class='foreign'>nomPlante</span>,
+    <span class='foreign'>nomLatin</span>
+  )
+</div>
+<div>
+  <span class='relation'>MENACES</span> (
+    <span class='primary'>nomMenace</span>,
+    <span class='normal'>descriptionMenace</span>,
+    <span class='normal'>listeSolutions</span>
+  )
+</div>
+<!--
+<div>
+  <span class='relation'>JARDINS_POTAGER</span> (
+    <span class='primary'>typeSol</span>
+  )
+</div>
+-->
+<div>
+  <span class='relation'>PERIODE</span> (
+    <span class='primary'>dateDebut</span>,
+    <span class='primary'>dateFin</span>
+  )
+</div>
+<div>
+  <span class='relation'>RECOLTE</span> (
+    <span class='foreign primary'>nomVariete</span>,
+    <span class='foreign primary'>dateDebut</span>,
+    <span class='foreign primary'>dateFin</span>,
+    <span class='normal'>descriptionRecolte</span>,
+    <span class='normal'>quantitéProduite</span>,
+    <span class='normal'>qualitéGustative</span>,
+    <span class='normal'>commentaireRécolte</span>
+  )
+</div>
+<div>
+  <span class='relation'>OCCUPE</span> (
+    <span class='foreign primary'>nomVariete</span>,
+    <span class='foreign primary'>latP</span>,
+    <span class='foreign primary'>longP</span>,
+    <span class='foreign primary'>numeroRang</span>,
+    <span class='normal'>typeMiseEnPlace</span>,
+    <span class='normal'>texteConsequences</span>
+  )
+</div>
+<div>
+  <span class='relation'>JARDINS</span> (
+    <span class='primary'>idJardin</span>,
+    <span class='normal'>nomJardin</span>,
+    <span class='normal'>surface</span>,
+    <span class='foreign'>estDornements</span>,
+    <span class='foreign'>hauteurMax</span>,
+    <span class='foreign'>typeSol</span>
+  )
+</div>
+<div>
+  <span class='relation'>INFESTATION</span> (
+    <span class='foreign primary'>dateDebut</span>,
+    <span class='foreign primary'>dateFin</span>,
+    <span class='foreign primary'>latP</span>,
+    <span class='foreign primary'>longP</span>,
+    <span class='foreign primary'>numeroRang</span>,
+    <span class='normal'>typePlanteSauvage</span>
+  )
+</div>
+<div>
+  <span class='relation'>RANGS</span> (
+    <span class='foreign primary'>latP</span>,
+    <span class='foreign primary'>longP</span>,
+    <span class='primary'>numeroRang</span>,
+    <span class='normal'>latR</span>,
+    <span class='normal'>longR</span>
+  )
+</div>
+<div>
+  <span class='relation'>PARCELLES</span> (
+    <span class='primary'>latP</span>,
+    <span class='primary'>longP</span>,
+    <span class='normal'>longueurP</span>,
+    <span class='normal'>largeurP</span>,
+    <span class='foreign'>idJardin</span>
+  )
+</div>
+<!--
+<div>
+  <span class='relation'>JARDINS_DORNEMENTS</span> (
+    <span class='primary'>estDornements</span>
+  )
+</div>
+-->
+</div>
+</body>
+</html>
